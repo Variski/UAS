@@ -1,0 +1,138 @@
+/* Auth Section Styles - Red Theme */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fef6f6; /* Light red background */
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.signin-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1); /* Red shadow */
+    padding: 40px;
+    border-top: 4px solid #ff0000; /* Red top border */
+}
+
+.signin-container h2 {
+    text-align: center;
+    color: #d32f2f; /* Dark red text */
+    margin-bottom: 30px;
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.signin-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0000, #ff5252); /* Red gradient */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #b71c1c; /* Dark red label */
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ffcdd2; /* Light red border */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ff0000;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1); /* Red glow */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #d50000, #ff1744); /* Red gradient */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #b71c1c, #d50000); /* Darker red gradient */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(213, 0, 0, 0.2); /* Red shadow */
+}
+
+.warning {
+    color: #c62828;
+    background-color: #ffebee; /* Light red background */
+    border: 1px solid #ef9a9a;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.links {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.links a {
+    color: #d50000; /* Red link color */
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.links a:hover {
+    color: #b71c1c; /* Darker red on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .signin-container {
+        padding: 30px 20px;
+    }
+    
+    .signin-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .input-group input {
+        padding: 10px 12px;
+    }
+    
+    button[type="submit"] {
+        padding: 12px;
+    }
+}

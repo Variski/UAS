@@ -1,0 +1,108 @@
+/* dashboard.css */
+/* Content Wrapper */
+.content-wrapper {
+    min-height: calc(100vh - 57px);
+    background-color: #f4f6f9;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Content Header */
+.content-header {
+    padding: 15px 0.5rem;
+}
+
+.content-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+    padding: 0;
+    background: transparent;
+    font-size: 0.9rem;
+}
+
+/* Small Boxes */
+.small-box {
+    border-radius: 0.25rem;
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.small-box:hover {
+    text-decoration: none;
+    color: #f8f9fa;
+}
+
+.small-box:hover .icon {
+    font-size: 95px;
+}
+
+.small-box > .inner {
+    padding: 10px;
+}
+
+.small-box h3 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    padding: 0;
+}
+
+.small-box p {
+    font-size: 1rem;
+}
+
+.small-box .icon {
+    transition: all 0.3s linear;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 0;
+    font-size: 90px;
+    color: rgba(0,0,0,0.15);
+}
+
+.small-box-footer {
+    position: relative;
+    text-align: center;
+    padding: 3px 0;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    background: rgba(0,0,0,0.1);
+    text-decoration: none;
+    z-index: 10;
+}
+
+.small-box-footer:hover {
+    color: #fff;
+    background: rgba(0,0,0,0.15);
+}
+
+/* Background Colors */
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Icons */
+.ion {
+    font-family: "Ionicons";
+}

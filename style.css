@@ -1,0 +1,661 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.main-nav {
+    gap: 30px;
+    display: flex;
+}
+
+/* Search */
+.search {
+    flex-grow: 1; /* Ini akan membuat search mengambil sisa space yang tersedia */
+    max-width: 25%; /* Atur lebar maksimal sesuai kebutuhan */
+    display: flex;
+    text-align: right;
+}
+
+.search form {
+    position: relative;
+    right: .1rem;
+    width: 100%;
+    min-width: 35rem;
+    border-style: hidden;
+}
+
+.search input {
+    width: 50%;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-bottom: 2px solid #1b272c;
+    background-color: transparent;
+    color: #1b272c;
+    box-shadow: none;
+    font-size:z 14px;
+    transition: all 0.3s ease;
+}
+
+.search input::placeholder {
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.search-button .fa-magnifying-glass{
+    font-size: 25px;
+        position: relative;
+        left: -10px; 
+        display: flex;
+        color: #1b272c;
+}
+
+.profile .fa-user {
+        font-size: 25px;
+        position: relative;
+        left: -50px; 
+        display: flex;
+        color: #1b272c;
+}
+
+.cart .fa-basket-shopping {
+    font-size: 25px;
+        position: relative;
+        left: -97px; 
+        display: flex;
+        color: #1b272c;
+}
+
+/* Main */
+main {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+
+.home-promo {
+    padding: 20px; /* Adjust as needed */
+    border-radius: 0px 0px 70px 70px;
+    background-color: #1b272c; /* Ganti border dengan background-color */
+    border: 60px solid #1b272c;
+    }
+
+.content-wrapper {
+    color: #1b272c;
+    border: none;
+    padding-left: 20%; /* Sesuaikan padding */
+    background-color: transparent; /* Background konten */
+    border-radius: 0px 0px 30px 30px; /* Lebih kecil dari parent */
+}
+
+.content-wrapper p{
+    color: white;
+}
+
+.foto-skateshop {
+    position: absolute;
+    right: 0px;
+    top: 75px;
+    opacity: 0.5;
+    height: 234px;
+    width: 500px;
+    border-radius: 0px 0px 70px 0px;
+}
+
+/* Efek hover untuk opacity */
+.foto-skateshop:hover {
+    opacity: 0.8;
+}
+
+/* News */
+.news-container {
+    max-width: 1200px;
+    margin: 5px auto;
+    padding: 0 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.news-slider {
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}   
+
+.slides {
+    width: 300%; /* 100% for each slide (3 slides) */
+    height: 500px;
+    display: flex;
+    position: relative;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 33.33%; /* 100% / 3 slides */
+    transition: all 0.6s ease;
+}
+
+.slide img {
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.news-container h1 {
+    text-align: center;
+    font-size: 100px;
+}
+
+/* Manual navigation */
+.nav-manual {
+    position: absolute;
+    width: 1000px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+
+.manual-btn {
+    border: 2px solid #1b272c;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    margin: 19px 10px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.manual-btn:hover {
+    background: white;
+}
+
+
+
+/* Slide transitions */
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -33.33%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -66.66%;
+}
+
+/* Auto navigation active state */
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3 {
+    background: none;
+}
+
+
+/* Brands Section */
+.brands {
+    margin: 100px;
+    border-radius: 0 70px 0 70px;
+    background-color: #1b272c;
+    border: 60px solid #1b272c;
+    color: white;
+    padding: 20px; /* Tambahkan padding untuk konten dalam */
+}
+
+.top-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ganti dari align-content ke align-items */
+    flex-wrap: wrap; /* Agar responsive */
+    gap: 70px; /* Jarak antar gambar */
+    margin-top: 30px;
+}
+
+/* Style untuk gambar brands */
+.list-brands img {
+    width: 150px; /* Atur ukuran yang konsisten */
+    height: 150px;
+    object-fit: contain; /* Pastikan logo terlihat utuh */
+    background-color: white; /* Background untuk logo */
+    padding: 10px; /* Ruang di sekitar logo */
+    border-radius: 20px; /* Border radius yang lembut */
+    transition: all 0.3s ease; /* Efek transisi */
+}
+
+/* Hover effect */
+.list-brands img:hover {
+    transform: scale(1.5); /* Sedikit membesar saat hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Shadow efek */
+}
+
+/* Untuk membuat border-radius lingkaran (50%) */
+.list-brands img.circle {
+    border-radius: 50%; /* Ini akan membuat gambar benar-benar bulat */
+}
+
+/* Second Brands */
+
+.second-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ganti dari align-content ke align-items */
+    flex-wrap: wrap; /* Agar responsive */
+    gap: 70px; /* Jarak antar gambar */
+    margin-top: 50px;
+}
+
+
+/* Skateboard */
+
+.skateboard {
+    margin: 100px;
+}
+
+.logo-skate img {
+        width: 100px !important;
+        height: 100px !important;
+        justify-content: center;
+        align-items: center;
+}
+
+.skateboard-container {
+  text-align: center;
+  margin: 0px 100px 0px 100px; /* Untuk mengatur posisi horizontal ke tengah */
+}
+
+.skateboard-container img {
+  width: 25%; /* Sesuaikan ukuran */
+  height: auto; /* Pertahankan rasio aspek */
+  text-align: center;
+}
+
+.skate-content {
+   /* Pertahankan rasio aspek */
+  text-align: center;
+  display: flex;
+  gap: 25px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  & a {
+    box-shadow: 1px 1px 10px grey;
+    border-radius: 10px;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #1b272c;
+    text-decoration: solid;
+    font-size: 25px;
+    font: bold 20px;
+    & img {
+        border-radius: 10px;
+        width: 200px;
+        height: 200px;
+        aspect-ratio: 1/1;
+        display: flex;
+    }
+  }
+}
+
+.skate-complate {
+    margin: 100px 0px 0px 0px;
+    justify-items: left;
+    box-shadow: #1b272c;
+}
+
+
+.skate-shop {
+    padding: 100px 0;
+    background: #f8f9fa;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 100px;
+    border-radius: 50px 0 50px 0;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch; /* Pastikan slide memiliki tinggi sama */
+    padding: 10px 0; /* Tambahkan padding */
+}
+
+.skate-swiper {
+    width: 100%;
+    padding: 30px 0 60px;
+}
+
+.skate-swiper {
+    overflow: visible; /* Biarkan slide terlihat di luar container */
+}
+.swiper-slide {
+    height: auto; /* Biarkan tinggi menyesuaikan konten */
+}
+
+.skate-card {
+    width: 320px;
+    margin: 0 auto;
+    background: #1b272c;
+    padding: 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.skate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.skate-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.badge {
+    display: inline-block;
+    background: #fff;
+    color: #1b272c;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skate-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.skate-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.skate-button:hover {
+    background: #fff;
+    color: #1b272c;
+}
+
+/* Swiper navigation */
+
+
+
+
+/* To this: */
+.Shoes h1 {
+    border: 3px solid white;
+    background: white;
+    color: #1b272c;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 1px 1px 1px 1px #1b272c;
+    margin: 100px;
+}
+
+/* Clothing Section */
+.Clothing h1 {
+    border: 3px solid white;
+    background: white;
+    color: #1b272c;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 1px 1px 1px 1px #1b272c;
+    margin: 100px;
+}
+
+/* Accessories Section */
+.accessories h1 {
+    border: 3px solid white;
+    background: white;
+    color: #1b272c;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 1px 1px 1px 1px #1b272c;
+    margin: 100px;
+}
+
+/* Shared Product Styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.product-info {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: gold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.review-count {
+    font-size: 12px;
+    color: #777;
+}
+
+.add-cart-btn {
+    background-color: #1b272c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.add-cart-btn:hover {
+    background-color: #32434c;
+}
+
+.no-products {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: #777;
+    font-size: 18px;
+    padding: 40px 0;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    margin: 100px 0px 0px 0px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 15px;
+}
+
+.legal-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-methods img {
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .legal-links {
+        margin-top: 10px;
+    }
+}
